@@ -1,7 +1,8 @@
 import React from 'react'
-import './building.scss';
+import './buildings.scss';
+import { Link } from 'react-router-dom';
 
-const Building = ({
+const Buildings = ({
     id,
     name,
     address
@@ -10,8 +11,9 @@ const Building = ({
     <div id='bulding-container'>
         <h2>{name}</h2>
         <h3>{address}</h3>
+        <Link to={`/buildings/${id}`} >Details</Link>
     </div>
   )
 }
 
-export default Building;
+export default Buildings;

@@ -3,8 +3,9 @@ import { useState } from 'react';
 
 import './App.scss';
 import Home from './components/Home/Home';
-import Building from './components/Building/Building';
+import Buildings from './components/Buildings/Buildings';
 import Login from './components/Login/Login';
+import BuildingDetails from './components/BuildingDetail/BuildingDetails';
 
 
 
@@ -17,8 +18,10 @@ function App() {
     <div id='main-container'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/building' element={<Building />} />
+          <Route path='/buildings' element={<Buildings />} />
+          <Route path='/buildings/:id' element={<BuildingDetails />} />
           <Route path='/login' element={<Login setToken = { setToken } token = { token }/>} />
+          
         </Routes>
     </div>
   );

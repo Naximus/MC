@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './home.scss';
 import buildings from '../../data/buildings';
-import Building from '../Building/Building';
+import Buildings from '../Buildings/Buildings';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
       </div>
       <div id='buldings-list'>
         {buildings.map(x =>
-                <Building key={x.id} {...x} />
+                <Buildings key={x.id} {...x} />
             )}
       </div>
     </div>
