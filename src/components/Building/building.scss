@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+
+#bulding-container {
+    display: flex;
+    max-width: 80%;
+    background-color: $main-box-color;
+    box-shadow: $main-box-shadow;
+}
