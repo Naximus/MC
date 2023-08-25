@@ -3,7 +3,15 @@
 
 #bulding-container {
     display: flex;
-    max-width: 80%;
+    flex-wrap: wrap;
+    width: 78%;
+    padding: 1rem;
     background-color: $main-box-color;
     box-shadow: $main-box-shadow;
+
+}
+
+.building-icon-holder {
+    width: 5rem;
+    height: 5rem;
 }

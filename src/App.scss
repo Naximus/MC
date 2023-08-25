@@ -1,3 +1,7 @@
+@import './styles/variables.scss';
+@import './styles/mainStyles.scss';
+
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -57,7 +61,7 @@
   }
 
   
-  @import './styles/variables.scss';
+
 
   .App {
     text-align: center;

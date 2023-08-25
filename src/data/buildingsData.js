@@ -1,4 +1,4 @@
-const buildings = [{
+const buildingsData = [{
     id: 1,
     name: "Building A",
     address: "Sample address",
@@ -15,4 +15,4 @@ const buildings = [{
     ]
 }];
 
-export default buildings;
+export default buildingsData;

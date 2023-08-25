@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import buildings from '../../data/buildings';
+import buildingsData from '../../data/buildingsData';
 
 const BuildingDetails = () => {
     let { id } = useParams(); 
@@ -9,10 +9,10 @@ const BuildingDetails = () => {
 
     const [building, setBuilding] = useState();
     useEffect(() => {
-        const building = buildings.filter(b => b.id == id);
+        const building = buildingsData.filter(b => b.id === id);
         setBuilding(building);
         console.log(building);
-    }, [id, buildings]);
+    }, [id, buildingsData]);
     
   return (
     <div>

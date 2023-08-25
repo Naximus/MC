@@ -1,0 +1,28 @@
+@import './variables.scss';
+
+.primery-btn {
+    display: flex;
+    gap: 0.5rem;
+    color: white;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(90deg, rgba(2,174,241,1) 0%, rgba(0,110,240,1) 100%);
+    box-shadow: $main-box-shadow;
+    border: none;
+
+}
+
+
+
+.icon-add {
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../assets/navigation_icons/134224_add_plus_new_icon.svg);
+}
+.icon-building {
+    width: 5.6rem;
+    height: 6rem;
+    background-size: cover;
+    background-image: url(../assets/appearance_icons/commercial-building.svg) ;
+  
+}

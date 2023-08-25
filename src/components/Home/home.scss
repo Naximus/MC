@@ -6,4 +6,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+#home-header {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+p {
+    padding: 0;
+    margin-bottom: 0;
 }
