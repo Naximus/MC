@@ -59,12 +59,17 @@
     margin: 0;
     padding: 0;
   }
-
+  a:link {
+    text-decoration: none;
+  }
   
 
 
   .App {
     text-align: center;
     background: $main-backgound-color;
+  }
+  #main-container {
+    height: 100vh;
   }
   
