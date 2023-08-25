@@ -41,7 +41,7 @@ const Login = () => {
     }, []);
     
     if (loading) {
-        return <div>Loading...</div>; // Тук можете да сложите вашето визуално представление на екрана за зареждане
+        return <div>Loading...</div>; 
     }
 
 
