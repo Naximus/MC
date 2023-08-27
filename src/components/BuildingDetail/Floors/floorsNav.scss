@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+
+
+.info-floor-nav {
+    display: flex;
+    width: 97%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: $main-box-color;
+    box-shadow: $main-box-shadow;
+    justify-content: space-between;
+
+    .main-info-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .floors-number {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .add-building-icon{
+        cursor: pointer;
+        width: 100px;
+    }
+    .floor-btn {
+        max-height: 3rem;
+
+        p {
+            font-size: 12px;
+        }
+    }
+    .floors-holder {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 1rem;
+    }
+}

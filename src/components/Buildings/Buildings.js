@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import './buildings.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 
 import iconAdress from '../../assets/appearance_icons/352521_location_on_icon.svg'
 import iconEdit from '../../assets/appearance_icons/icon_edit.png'
@@ -15,15 +16,62 @@ const Buildings = ({
     id,
     name,
     address,
-    floorsCount,
-    officesCount,
-    roomsCount,
-    devicesCount,
     onlineDevices,
     floors
 }) => {
 
   const navigate = useNavigate();
+  // console.log(floors);
+  const roomsCount = useMemo(
+    () => {
+      let count = 0;
+      floors.map( floor => {
+        if(floor.rooms && floor.rooms.length > 0) {
+          count += floor.rooms.length;
+        }
+      })
+      return count;
+    },
+    [floors]
+  );
+
+  const officesCount = useMemo(
+    () => {
+      let count = 0;
+      floors.map( floor => {
+        if(floor.offices && floor.offices.length > 0) {
+          count += floor.offices.length;
+        }
+      })
+      return count;
+    },
+    [floors]
+  );
+
+  const devicesCount = useMemo(
+    () => {
+      let count = 0;
+      floors.map( floor => {
+        if(floor.offices && floor.offices.length > 0) {
+          floor.offices.map( office => {
+            if(office.devices && office.devices.length > 0) {
+              count += office.devices.length;
+            }
+          });
+        }
+
+        if(floor.rooms && floor.rooms.length > 0) {
+          floor.rooms.map( room => {
+            if(room.devices && room.devices.length > 0) {
+              count += room.devices.length;
+            }
+          });
+        }
+      })
+      return count;
+    },
+    [floors]
+  );
 
 
   return (
@@ -41,7 +89,7 @@ const Buildings = ({
                 <div className='info-icons-styles'>
                   <img className="icons-style" src={iconFloors} />
                   <p>Floors: </p>
-                  <p>{floorsCount}</p>
+                  <p>{floors.length}</p>
                 </div>
                 <div className='info-icons-styles'>
                   <img className="icons-style" src={iconOffices} />
@@ -66,7 +114,16 @@ const Buildings = ({
             </div>
             {/* <Link to={`/buildings/${id}`} >Details</Link> */}
             <div onClick={() => {
-              navigate(`/buildings/${id}`);
+              navigate(`/buildings/${id}`, { state: {
+                id,
+                name,
+                address,
+                onlineDevices,
+                floors,
+                officesCount,
+                roomsCount,
+                devicesCount
+              }});
           }}><img className="icons-style cursor-pointer" src={iconArrowNext} /></div>
 
           </div>

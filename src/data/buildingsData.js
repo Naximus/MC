@@ -2,10 +2,6 @@ const buildingsData = [{
     id: "building-1",
     name: "Building A",
     address: "Sample address",
-    floorsCount: 1,
-    officesCount: 3,
-    roomsCount: 2,
-    devicesCount: 2,
     onlineDevices: 2,
     floors: [
         {
@@ -52,21 +48,10 @@ const buildingsData = [{
                 {
                     id: "room-12",
                     capacityPeople: 2
-                }
-                
-            ],
-            devices: [
-                {
-                    id: "device-11",
-                    type: "printer",
-                    powerInput: "220v",
-                    interface: "usb"
                 },
                 {
-                    id: "device-12",
-                    type: "printer",
-                    powerInput: "220v",
-                    interface: "wifi"
+                    id: "room-13",
+                    capacityPeople: 3
                 }
                 
             ]
@@ -77,11 +62,7 @@ const buildingsData = [{
     id: "building-2",
     name: "Building B",
     address: "Sample address",
-    floorsCount: 2,
-    officesCount: 3,
-    roomsCount: 8,
-    devicesCount: 1,
-    onlineDevices: 1,
+    onlineDevices: 3,
     floors: [
         {
             id: "floor-1",
@@ -165,6 +146,25 @@ const buildingsData = [{
                 {
                     id: "office-23",
                     capacityPeople: 2,
+                    windows: 0,
+                    devices: [
+                        {
+                            id: "device-23",
+                            type: "TV",
+                            powerInput: "220v",
+                            interface: "wifi"
+                        },
+                        {
+                            id: "device-24",
+                            type: "PS5",
+                            powerInput: "220v",
+                            interface: "wifi"
+                        }
+                    ]
+                },
+                {
+                    id: "office-24",
+                    capacityPeople: 6,
                     windows: 0
                 }
             ],
@@ -176,28 +176,12 @@ const buildingsData = [{
                 {
                     id: "room-22",
                     capacityPeople: 2
-                },
-                {
-                    id: "room-23",
-                    capacityPeople: 2
-                },
-                {
-                    id: "room-24",
-                    capacityPeople: 2
-                }
-                
-            ],
-            devices: [
-                {
-                    id: "device-22",
-                    type: "printer",
-                    powerInput: "220v",
-                    interface: "wifi"
                 }
                 
             ]
         }
     ]
-}]
+}
+];
 
 export default buildingsData;

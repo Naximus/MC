@@ -71,6 +71,11 @@
   }
   #main-container {
     height: 100vh;
+    background-color: $main-backgound-color;
+  }
+
+  body {
+    background: $main-backgound-color;
   }
 
  
