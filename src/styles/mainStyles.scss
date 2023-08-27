@@ -15,14 +15,17 @@
 
 
 .icon-add {
-    width: 2rem;
-    height: 2rem;
+    width: 20px;
+    height: 20px;
     background-image: url(../assets/navigation_icons/134224_add_plus_new_icon.svg);
 }
 .icon-building {
-    width: 5.6rem;
-    height: 6rem;
+    width: 6.6rem;
+    height: 7rem;
     background-size: cover;
     background-image: url(../assets/appearance_icons/commercial-building.svg) ;
   
+}
+.cursor-pointer{
+    cursor: pointer;
 }

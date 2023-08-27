@@ -19,8 +19,8 @@ const Home = () => {
       {token ? (
         <>
           <div id="home-header">
-            <h1>Home Header</h1>
-            <button className="primery-btn"><div className='icon-add'></div><p>Create new building </p></button>
+            <div><h1>Buildings ({buildingsData.length})</h1></div>
+            <button className="primery-btn"><div className='icon-add'></div><p >Create new building </p></button>
           </div>
           
           <div id='buldings-list'>

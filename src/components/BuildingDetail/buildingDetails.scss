@@ -1,0 +1,25 @@
+#building-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.building-details-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.back-button {
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border-radius: 15px;
+    background-color: #eeebf2;
+
+}

@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import '../BuildingDetail/buildingDetails.scss';
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import buildingsData from '../../data/buildingsData';
+
+
+
+
 
 const BuildingDetails = () => {
     let { id } = useParams(); 
@@ -14,11 +19,17 @@ const BuildingDetails = () => {
         console.log(building);
     }, [id, buildingsData]);
     
+    const handleGoHome = () => {
+      navigate('/'); 
+  }
+
   return (
-    <div>
-        {/* <button onClick={()=> navigate(-1)}>Back</button> */}
-        <Link to={'/'}>Back</Link>
-        <div>BuildingDetails</div>
+    <div id='building-details'>
+      <div className='building-details-header '> 
+        <div className='back-button' onClick={handleGoHome}>Back</div>
+          
+      </div>
+      <h2>Building dashboard</h2>
         <div>{id}</div>
     </div>
   )
