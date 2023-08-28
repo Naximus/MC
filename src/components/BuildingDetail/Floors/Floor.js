@@ -1,10 +1,16 @@
 import React, { useMemo, useState } from "react";
 import '../Floors/floors.scss';
 import { useNavigate, useLocation  } from 'react-router-dom';
+
+
 import iconArrowBack from '../../../assets/navigation_icons/2849832_arrows_navigation_arrow_left_back_icon.svg';
 import iconOffices from '../../../assets/appearance_icons/icon_appartment.svg';
 import iconRooms from '../../../assets/appearance_icons/icon_door.svg';
 import iconBuilding from '../../../assets/appearance_icons/commercial-building.svg';
+
+import { ReactComponent as FloorIcon } from '../../../assets/appearance_icons/icon_floor.svg';
+
+
 import AllDevices from "../AllDevices/AllDevicesNav";
 import ManageDevices from "../ManageDevices/ManageDevicesNav";
 import UserManagement from "../UserManagement/UserManagementNav";
@@ -49,7 +55,8 @@ const Floor = () => {
 
             <h2>Floor dashboard</h2>
             <div className='bulding-details-container'>
-                <div className='icon-floors'></div>
+                {/* <div className='icon-floors'></div> */}
+                <FloorIcon className="buildingIcon icon-floors" />
                 <div className='main-info-details'>
                 <h2>{floor.name}</h2>
                 <div className='adress-holder'>

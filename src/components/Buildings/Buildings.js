@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react'
 import './buildings.scss';
-import { Link } from 'react-router-dom';
+
 import { useNavigate } from 'react-router-dom';
+
+import { ReactComponent as BuildingIcon } from '../../assets/appearance_icons/commercial-building.svg';
 
 
 import iconAdress from '../../assets/appearance_icons/352521_location_on_icon.svg'
@@ -76,7 +78,11 @@ const Buildings = ({
 
   return (
     <div id='bulding-container'>
-        <div className='icon-building'></div>
+
+        {/* <div className='icon-building'></div> */}
+        <BuildingIcon className="buildingIcon icon-building" />
+
+
         <div className='main-info'>
           <h2>{name}</h2>
           <div className='adress-holder'>

@@ -3,11 +3,15 @@ import '../BuildingDetail/buildingDetails.scss';
 import {  useLocation, useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
+import { ReactComponent as BuildingIcon } from '../../assets/appearance_icons/commercial-building.svg';
+
 import iconArrowBack from '../../assets/navigation_icons/2849832_arrows_navigation_arrow_left_back_icon.svg'
 import iconAdress from '../../assets/appearance_icons/352521_location_on_icon.svg'
 import iconFloors from '../../assets/appearance_icons/icon_floor.svg'
 import iconOffices from '../../assets/appearance_icons/icon_appartment.svg'
 import iconRooms from '../../assets/appearance_icons/icon_door.svg'
+
+
 import Floors from './Floors/FloorsNav';
 import AllDevices from './AllDevices/AllDevicesNav';
 import Apartments from './Apartments/ApartmentsNav';
@@ -56,7 +60,7 @@ const BuildingDetails = () => {
       </div>
       <h2>Building dashboard</h2>
       <div className='bulding-details-container'>
-        <div className='icon-building'></div>
+        <BuildingIcon className="buildingIcon icon-building" />
         <div className='main-info-details'>
           <h2>{buildingData.name}</h2>
           <div className='adress-holder'>
