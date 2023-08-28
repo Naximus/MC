@@ -1,16 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import '../BuildingDetail/buildingDetails.scss';
-import {  useLocation, useParams } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
-import { ReactComponent as BuildingIcon } from '../../assets/appearance_icons/commercial-building.svg';
-
-import iconArrowBack from '../../assets/navigation_icons/2849832_arrows_navigation_arrow_left_back_icon.svg'
-import iconAdress from '../../assets/appearance_icons/352521_location_on_icon.svg'
-import iconFloors from '../../assets/appearance_icons/icon_floor.svg'
-import iconOffices from '../../assets/appearance_icons/icon_appartment.svg'
-import iconRooms from '../../assets/appearance_icons/icon_door.svg'
-
+import {  BuildingIcon, AddressIcon, IconFloors, IconOffices, IconRooms, IconArrowBack} from '../../utils/icons';
 
 import Floors from './Floors/FloorsNav';
 import AllDevices from './AllDevices/AllDevicesNav';
@@ -22,7 +15,6 @@ import UserManagement from './UserManagement/UserManagementNav';
 
 
 const BuildingDetails = () => {
-    let { id } = useParams();
     
     const [activeTab, setActiveTab] = useState("floors");
 
@@ -31,15 +23,6 @@ const BuildingDetails = () => {
     const location = useLocation();
     const buildingData = location.state;
 
-    // const [building, setBuilding] = useState([]);
-    
-    // useEffect(() => {
-    //     const building = buildingsData.find(b => b.id === id);
-    //     setBuilding(building);
-    //     console.log(building.floors);
-
-    // }, [id, buildingsData]);
-    
     const handleGoHome = () => {
       navigate('/'); 
   }
@@ -53,7 +36,7 @@ const BuildingDetails = () => {
     <div id='building-details'>
       <div className='building-details-header '> 
         <div className='back-button' onClick={handleGoHome}>
-          <img className='arrow' src={iconArrowBack} />
+          <IconArrowBack className="arrow" />
           <p>Back</p> 
          </div>
          <button className="primery-btn add-btn-building"><p>Edit building </p></button>
@@ -64,23 +47,23 @@ const BuildingDetails = () => {
         <div className='main-info-details'>
           <h2>{buildingData.name}</h2>
           <div className='adress-holder'>
-          <img className="icons-style" src={iconAdress} />
+            <AddressIcon className="icons-style" />
             <h3>{buildingData.address}</h3>
           </div>
           <div className='extra-info'>
             <div className='info-icons'>
                 <div className='info-icons-styles'>
-                  <img className="icons-style" src={iconFloors} />
+                  <IconFloors className="icons-style" />
                   <p>Floors: </p>
                   <p>{buildingData.floors.length}</p>
                 </div>
                 <div className='info-icons-styles'>
-                  <img className="icons-style" src={iconOffices} />
+                  <IconOffices className="icons-style" />
                   <p>Offices: </p>
                   <p>{buildingData.officesCount}</p>
                 </div>
                 <div className='info-icons-styles'>
-                  <img className="icons-style" src={iconRooms} />
+                  <IconRooms className="icons-style" />
                   <p>Rooms: </p>
                   <p>{buildingData.roomsCount}</p>
                 </div>

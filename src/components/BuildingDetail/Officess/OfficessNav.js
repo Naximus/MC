@@ -1,13 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 import iconBuilding from '../../../assets/appearance_icons/add-a-device.png';
 
 const OfficessNav = ({ 
     floor
 }) => {
-    const location = useLocation();
-    const buildingData = location.state.buildingData
     const offices = floor.offices;
 
 

@@ -2,13 +2,10 @@ import React, { useMemo, useState } from "react";
 import '../Floors/floors.scss';
 import { useNavigate, useLocation  } from 'react-router-dom';
 
+import {  BuildingIcon, IconFloors, IconOffices, IconRooms, IconArrowBack} from '../../../utils/icons';
 
-import iconArrowBack from '../../../assets/navigation_icons/2849832_arrows_navigation_arrow_left_back_icon.svg';
-import iconOffices from '../../../assets/appearance_icons/icon_appartment.svg';
-import iconRooms from '../../../assets/appearance_icons/icon_door.svg';
-import iconBuilding from '../../../assets/appearance_icons/commercial-building.svg';
 
-import { ReactComponent as FloorIcon } from '../../../assets/appearance_icons/icon_floor.svg';
+
 
 
 import AllDevices from "../AllDevices/AllDevicesNav";
@@ -47,7 +44,7 @@ const Floor = () => {
         <div className="floor-holder">
             <div className='building-details-header '> 
                 <div className='back-button' onClick={() => navigate(-1)}>
-                <img className='arrow' src={iconArrowBack} />
+                <IconArrowBack className="arrow" />
                 <p>Back</p> 
                 </div>
                 <button className="primery-btn add-btn-building"><p>Edit floor </p></button>
@@ -55,23 +52,22 @@ const Floor = () => {
 
             <h2>Floor dashboard</h2>
             <div className='bulding-details-container'>
-                {/* <div className='icon-floors'></div> */}
-                <FloorIcon className="buildingIcon icon-floors" />
+                <IconFloors className="buildingIcon icon-floors" />
                 <div className='main-info-details'>
                 <h2>{floor.name}</h2>
                 <div className='adress-holder'>
-                <img className="icons-style" src={iconBuilding} />
+                <BuildingIcon className="icons-style" />
                     <h3>{buildingName}</h3>
                 </div>
                 <div className='extra-info'>
                     <div className='info-icons'>
                         <div className='info-icons-styles'>
-                        <img className="icons-style" src={iconOffices} />
+                        <IconOffices className="icons-style" />
                         <p>Offices: </p>
                         <p>{officesCount}</p>
                         </div>
                         <div className='info-icons-styles'>
-                        <img className="icons-style" src={iconRooms} />
+                        <IconRooms className="icons-style" />
                         <p>Rooms: </p>
                         <p>{roomsCount}</p>
                         </div>
