@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import '../BuildingDetail/buildingDetails.scss';
 import {  useLocation, useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import buildingsData from '../../data/buildingsData';
 
 import iconArrowBack from '../../assets/navigation_icons/2849832_arrows_navigation_arrow_left_back_icon.svg'
 import iconAdress from '../../assets/appearance_icons/352521_location_on_icon.svg'
@@ -23,8 +22,8 @@ const BuildingDetails = () => {
     
     const [activeTab, setActiveTab] = useState("floors");
 
-
     const navigate = useNavigate();
+
     const location = useLocation();
     const buildingData = location.state;
 
@@ -41,7 +40,6 @@ const BuildingDetails = () => {
       navigate('/'); 
   }
 
-  // console.log(buildingData.floors);
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -124,7 +122,7 @@ const BuildingDetails = () => {
     </div>
     <div className='current-dashboard-info'>
       { activeTab === "devices" && <div><AllDevices /></div> }
-      { activeTab === "floors" && <div><Floors floorLenght = { buildingData.floors.length } floorsInfo = { buildingData.floors } buildingName = {buildingData.name}/></div> }
+      { activeTab === "floors" && <div><Floors buildingData = { buildingData } /></div> }
       { activeTab === "apartments" && <div><Apartments /></div> }
       { activeTab === "rooms" && <div><Rooms /></div> }
       { activeTab === "manage" && <div><ManageDevices /></div> }

@@ -1,24 +1,23 @@
 import React from "react";
-import '../Floors/floorsNav.scss';
+import '../Floors/floors.scss';
 import { useNavigate } from 'react-router-dom';
 import iconAddBuilding from '../../../assets/appearance_icons/add-a-floor.png'
 
 const FloorsNav = ({
-    floorLenght,
-    floorsInfo,
-    buildingName
+    buildingData,
 }) => {
     const navigate = useNavigate();
-    console.log(floorsInfo);
+    
 
+    const floorsInfo = buildingData.floors;
     const handleFloorClick = (floor) => {
-        navigate(`/floor/${floor.id}`, { state: { floor, buildingName } });
+        navigate(`/floor/${floor.id}`, { state: { floor, buildingData } });
     };
 
     return (
         <div className="info-floor-nav">
             <div className="main-info-holder">
-                <h2 className="floors-number">FLOORS ({floorLenght})</h2>
+                <h2 className="floors-number">FLOORS ({floorsInfo.length})</h2>
                 
                 {floorsInfo.length === 0 ? (
                     <p>There are no floors assigned to this building.</p>
