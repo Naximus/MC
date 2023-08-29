@@ -3,11 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import TokenContext from '../../contexts/TokenContext';
 import { useContext, useEffect, useState } from 'react';
 
+import { useDispatch, useSelector } from "react-redux";
+import { setToken } from "../../utils/tokenSlice";
+
 const Login = () => {
 
-    const { token, setToken } = useContext(TokenContext);
+    // const { token, setToken } = useContext(TokenContext);
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
+
+    const dispatch = useDispatch();
+    const token = useSelector(state => state.token.value);
 
     const handleLogin = async () => {
         try {
@@ -24,8 +30,11 @@ const Login = () => {
                 },
               });
 
-              await setToken(response.data.auth.access_token);
-              localStorage.setItem('authToken', response.data.auth.access_token);
+            dispatch(setToken(response.data.auth.access_token));
+            localStorage.setItem('authToken', response.data.auth.access_token);
+
+            //   await setToken(response.data.auth.access_token);
+            //   localStorage.setItem('authToken', response.data.auth.access_token);
               setTimeout(() => {
                 navigate("/");
               }, 2000);
@@ -47,8 +56,6 @@ const Login = () => {
 
     return (
         <div>
-            {/* <button onClick={handleLogin}>Login</button> */}
-            {/* {token && <p>Logged in with token: {token}</p>} */}
         </div>
     );
 };

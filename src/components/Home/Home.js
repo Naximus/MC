@@ -1,18 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { } from 'react';
 import { Link } from 'react-router-dom';
 import './home.scss';
 import buildingsData from '../../data/buildingsData';
 import Buildings from '../Buildings/Buildings';
-import TokenContext from '../../contexts/TokenContext';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 
-  const { token, setToken } = useContext(TokenContext);
-
-  // useEffect(()=>
-  //   {
-      
-  //   }, []);
+  const token = useSelector(state => state.token.value);
 
   return (
     <div className='home-page '>
