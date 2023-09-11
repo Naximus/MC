@@ -1,13 +1,21 @@
-import React, { } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './home.scss';
 import buildingsData from '../../data/buildingsData';
 import Buildings from '../Buildings/Buildings';
 import { useSelector } from 'react-redux';
 
+import { useDispatch } from 'react-redux';
+import { setBuildings } from '../../utils/buildingSlice.js';
+
 const Home = () => {
 
   const token = useSelector(state => state.token.value);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setBuildings(buildingsData));
+}, [dispatch]);
 
   return (
     <div className='home-page '>
